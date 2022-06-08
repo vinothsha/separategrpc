@@ -1,0 +1,16 @@
+syntax="proto3";
+package separategrpc;
+option go_package="separategrpc/readproto";
+// import "google/protobuf/empty.proto";
+message Blogr{
+    string id=1;
+    string authorid=2;
+    string title=3;
+    string content=4;
+}
+message Blogid{
+    string id=1;
+}
+service ReadAllBlogService{
+    rpc ReadBlog(Blogid) returns(Blogr);
+}

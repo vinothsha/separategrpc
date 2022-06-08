@@ -1,0 +1,16 @@
+syntax="proto3";
+package separategrpc;
+option go_package="separategrpc/createproto";
+
+message Blog{
+    string id=1;
+    string authorid=2;
+    string title=3;
+    string content=4;
+}
+message BlogId{
+    string id=1;
+}
+service BlogCreateService{
+    rpc CreateBlog(Blog)returns(BlogId);
+}
